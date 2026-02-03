@@ -1,7 +1,7 @@
 #IMPORTS
 from datetime import datetime as now
 import os
-# Calculator for the programme system
+# Calculator for the System
 def calculator():
     try:
         num1=float(input("Enter the first no. : "))

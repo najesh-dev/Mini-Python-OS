@@ -9,6 +9,7 @@ while True:
     try:
         a=int(input(f"{BOLD}Enter the Password: {RESET}\n"))
         if a==PASSWORD:
+            clear_screen()
             start_screen()
             break
         else:
