@@ -3,26 +3,18 @@ from datetime import datetime as now
 import os
 # Calculator for the System
 def calculator():
+    user_input=input(">>")
+    allowed_char='0123456789/*+-.() '
     try:
-        num1=float(input("Enter the first no. : "))
-        num2=float(input("Enter the second no. : "))
-        op=input("\nChoose the operand(+,-,*,/): ")
-
-        if op=="+":
-            print(f"The sum is {num1 + num2}")
-        elif op=="-":
-            print(f"The difference is { num1-num2}")
-        elif op=="*":
-            print(f"The product is {num1*num2}")
-        elif op=="/":
-            if num2!="0":
-                print(f"The quotient is {num1/num2}")
-            else:
-                print("Sorry! cannot divide")
+        if all(char in allowed_char for char in user_input):
+            result=eval(user_input, { "__builtins__":None}, {})
+            print(result)
         else:
-            print("Invalid Operand")
-    except ValueError:
-        print("Please enter a number!")
+            print("characters used not allowed!")
+    except ZeroDivisionError:
+        print("cannot divide by zero")
+    except(SyntaxError, NameError):
+        print("sorry! something went wrong")
 
 # Shows date
 def show_date():
